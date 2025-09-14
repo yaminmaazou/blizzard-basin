@@ -16,7 +16,7 @@ BLACK = (0, 0, 0)
 BLUE = (0, 0, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
-PURPLE = (255, 0, 255)
+PINK = (255, 0, 255)
 GRAY = (100, 100, 100)
 
 
@@ -169,7 +169,7 @@ class Graphics():
     
     def _draw_trajectory(self) -> None:
         for i in range(len(self.trajectory) - 1):
-            pygame.draw.line(self.map, PURPLE,
+            pygame.draw.line(self.map, PINK,
                             (self.trajectory[i][0] * self.tile_size + self.tile_size // 2,
                              self.trajectory[i][1] * self.tile_size + self.tile_size // 2),
                             (self.trajectory[i + 1][0] * self.tile_size + self.tile_size // 2,
@@ -286,6 +286,14 @@ class Graphics():
             svg.append(dsvg.Line(0, i * self.tile_size,
                                  self.map_width, i * self.tile_size,
                                  stroke='gray', stroke_width=1))
+        
+        # Draw trajectory
+        for i in range(len(self.trajectory) - 1):
+            svg.append(dsvg.Line(self.trajectory[i][0] * self.tile_size + self.tile_size // 2,
+                                 self.trajectory[i][1] * self.tile_size + self.tile_size // 2,
+                                 self.trajectory[i + 1][0] * self.tile_size + self.tile_size // 2,
+                                 self.trajectory[i + 1][1] * self.tile_size + self.tile_size // 2,
+                                 stroke='#FF00FF', stroke_width=2))
 
         svg.save_svg(filename)
 
