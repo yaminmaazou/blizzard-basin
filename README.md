@@ -16,8 +16,8 @@ pip install -r requirements.txt
 ```
 
 ## Controls
-In GUI mode, you can use the following controls:
-- **K**: Save the current frame as an SVG image.
+In GUI mode, you can use the following keyboard controls:
+- **X**: Save the current frame as an SVG image.
 - **Enter**: Start or pause the simulation.
 - **Space**: Advance one step when paused.
 - **Arrow Keys**: Move the player manually (only in manual mode).
